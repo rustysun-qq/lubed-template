@@ -15,7 +15,7 @@ abstract class AbstractTemplateCompiler implements TemplateCompiler {
     }
 
     public function getCompiledPath(string $path) : string {
-        return sprintf('%s/%s.php', $this->template_path->getCachedPath(), md5($path));
+        return sprintf('%s/%s/%s.php', $this->template_path->getCachedPath(),dirname($path), md5($path));
     }
 
     public function getSourcePath(string $path) : string {
